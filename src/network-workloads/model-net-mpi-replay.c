@@ -2069,7 +2069,7 @@ int main( int argc, char** argv )
 
    assert(num_net_traces);
 
-   if(!g_tw_mynode)
+   if(!g_tw_mynode) {
      printf("\n Total bytes sent %llu recvd %llu \n max runtime %lf ns avg runtime %lf \n max comm time %lf avg comm time %lf \n max send time %lf avg send time %lf \n max recv time %lf avg recv time %lf \n max wait time %lf avg wait time %lf \n", total_bytes_sent, total_bytes_recvd,
             max_run_time, avg_run_time/num_net_traces,
             max_comm_run_time, avg_comm_run_time/num_net_traces,
@@ -2079,6 +2079,7 @@ int main( int argc, char** argv )
      printf("\n *** Synthetic traffic statistics *** \n "
             "Total bytes sent %lld Received %lld \n",
             total_syn_bytes_sent, total_syn_bytes_recvd);
+   }
     if (do_lp_io){
         int ret = lp_io_flush(io_handle, MPI_COMM_WORLD);
         assert(ret == 0 || !"lp_io_flush failure");
