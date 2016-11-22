@@ -660,7 +660,6 @@ static void gen_synthetic_tr_rc(nw_state * s, tw_bf * bf, nw_message * m, tw_lp 
     s->num_bytes_sent -= payload_size;
     num_syn_bytes_sent -= payload_size;
     tw_rand_reverse_unif(lp->rng);
-    tw_rand_reverse_unif(lp->rng);
 
     model_net_event_rc(net_id, lp, payload_size);
 }
